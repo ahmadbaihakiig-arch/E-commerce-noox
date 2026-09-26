@@ -64,11 +64,10 @@ export const header = (): string => `
     </div>
   </nav>
 
-  <div class="relative z-20 max-w-7xl mx-auto px-4 lg:px-8 pt-20 lg:pt-24 pb-6 lg:pb-8 min-h-[100svh] flex flex-col">
+  <div class="relative z-20 max-w-7xl mx-auto px-4 lg:px-8 pt-28 lg:pt-36 pb-6 lg:pb-8 min-h-[100svh] flex flex-col">
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
       <div class="lg:col-span-7 max-w-3xl">
-      
         <h1 class="reveal d2 font-display font-bold tracking-tightest text-[clamp(2.25rem,7.5vw,4.75rem)] leading-[1.02]">
           <span class="block">Built to last.</span>
           <span class="block text-grad">Beyond trends.</span>
@@ -79,20 +78,20 @@ export const header = (): string => `
         </p>
 
         <div class="reveal d4 mt-7 lg:mt-8 flex flex-wrap items-center gap-3">
-        <a href="#products" class="group relative h-12 lg:h-13 px-6 lg:px-7 rounded-full bg-white text-black text-[13px] lg:text-[14px] font-bold active:scale-[0.97] transition-transform shadow-2xl shadow-black/40 hover:shadow-xl hover:shadow-white/20 flex items-center gap-2.5 overflow-hidden">
-          <span class="relative z-10 flex items-center gap-2.5">
-            Shop now
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
-          </span>
-          <span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/40 to-transparent"></span>
-        </a>
-        <a href="#products" class="group h-12 lg:h-13 px-5 lg:px-6 rounded-full bg-black/40 border border-white/20 text-white text-[13px] lg:text-[14px] font-bold active:scale-[0.97] transition-colors hover:bg-black/60 flex items-center gap-2.5">
-          <span class="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h10"/></svg>
-          </span>
-          Browse all
-        </a>
-      </div>
+          <a href="#products" class="group relative h-12 lg:h-13 px-6 lg:px-7 rounded-full bg-white text-black text-[13px] lg:text-[14px] font-bold active:scale-[0.97] transition-transform shadow-2xl shadow-black/40 hover:shadow-xl hover:shadow-white/20 flex items-center gap-2.5 overflow-hidden">
+            <span class="relative z-10 flex items-center gap-2.5">
+              Shop now
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
+            </span>
+            <span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/40 to-transparent"></span>
+          </a>
+          <a href="#products" class="group h-12 lg:h-13 px-5 lg:px-6 rounded-full bg-black/40 border border-white/20 text-white text-[13px] lg:text-[14px] font-bold active:scale-[0.97] transition-colors hover:bg-black/60 flex items-center gap-2.5">
+            <span class="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h10"/></svg>
+            </span>
+            Browse all
+          </a>
+        </div>
 
         <div class="reveal d4 mt-7 lg:mt-9 flex flex-wrap items-center gap-x-5 gap-y-4 text-[12px]">
           <div class="flex items-center gap-2.5">
@@ -119,7 +118,7 @@ export const header = (): string => `
       </div>
 
       <div class="hidden lg:flex lg:col-span-5 justify-end pt-2 reveal d3">
-       <button type="button" data-product-id="119" class="group w-[340px] text-left bg-zinc-950/80 border border-white/15 rounded-3xl p-3 hover:border-orange-400/40 hover:bg-zinc-950/95 transition-colors duration-300 shadow-2xl shadow-black/40 cursor-pointer">
+        <button type="button" data-product-id="119" class="group w-[340px] text-left bg-zinc-950/80 border border-white/15 rounded-3xl p-3 hover:border-orange-400/40 hover:bg-zinc-950/95 transition-colors duration-300 shadow-2xl shadow-black/40 cursor-pointer">
           <div class="relative aspect-square rounded-2xl overflow-hidden bg-zinc-900">
             <img src="https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/thumbnail.webp" alt="" class="w-full h-full object-cover" loading="eager" decoding="async">
             <div class="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/30 to-transparent pointer-events-none"></div>
@@ -147,7 +146,7 @@ export const header = (): string => `
               </div>
             </div>
           </div>
-        </a>
+        </button>
       </div>
 
     </div>
