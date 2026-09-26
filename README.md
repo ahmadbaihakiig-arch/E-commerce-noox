@@ -17,14 +17,16 @@ The project demonstrates a modular architecture where each feature lives in its 
 ## Features
 
 ### Product Catalog
+
 - Fetches products from DummyJSON API with pagination
 - Category filter with quick chips (Smartphones, Laptops, Fragrances, Skincare, Groceries, Decor)
 - Sort options: Newest, Price low to high, Price high to low, Top rated
-- Load more button for infinite scrolling style navigation
+- Load more button for incremental pagination
 - Skeleton loading state with shimmer effect
 - Error and empty states designed with proper visual feedback
 
 ### Product Detail
+
 - Opens as a side panel on desktop, bottom sheet on mobile
 - Swipeable image gallery with dot indicators
 - Product info: brand, title, rating, stock status, price with discount badge
@@ -32,6 +34,7 @@ The project demonstrates a modular architecture where each feature lives in its 
 - Three action buttons: Wishlist, View Cart, Add to Cart
 
 ### Shopping Cart
+
 - Add, remove, and update quantity of items
 - Persists to localStorage (survives page refresh)
 - Free shipping progress bar (unlock at $50)
@@ -39,12 +42,14 @@ The project demonstrates a modular architecture where each feature lives in its 
 - Badge indicator on navigation with pulse animation
 
 ### Wishlist
+
 - Toggle heart icon on any product card or detail panel
 - Dedicated side sheet showing saved items
 - Add to cart directly from wishlist
 - Persists to localStorage
 
 ### Search
+
 - Debounced search input (350ms delay)
 - Mobile overlay for full-screen search
 - Trending keyword chips
@@ -52,6 +57,7 @@ The project demonstrates a modular architecture where each feature lives in its 
 - Clear button and Cancel action
 
 ### Mobile Menu
+
 - Drawer navigation from the left
 - Browse links (New, Men, Women, Sale, Journal)
 - Category shortcuts that apply filters directly
@@ -59,6 +65,7 @@ The project demonstrates a modular architecture where each feature lives in its 
 - Search input in menu header
 
 ### UX Details
+
 - History API integration: browser back button closes panels instead of leaving the page
 - Toast notifications for add to cart and wishlist actions
 - Body scroll lock when panels are open
@@ -82,45 +89,47 @@ The project demonstrates a modular architecture where each feature lives in its 
 ---
 
 ## Project Structure
+
+```
 nook/
 ├── public/
-│ └── images/
-│ ├── hero-desktop.png
-│ └── hero-mobile.png
+│   └── images/
+│       ├── hero-desktop.webp
+│       └── hero-mobile.webp
 ├── src/
-│ ├── api/
-│ │ └── products.ts # API fetcher
-│ ├── components/
-│ │ ├── cart.ts # Cart sheet template
-│ │ ├── detail.ts # Detail panel template
-│ │ ├── footer.ts # Footer template
-│ │ ├── header.ts # Header template
-│ │ ├── mobileMenu.ts # Mobile drawer template
-│ │ ├── products.ts # Product grid templates
-│ │ ├── search.ts # Search overlay template
-│ │ ├── toast.ts # Toast template
-│ │ └── wishlist.ts # Wishlist sheet template
-│ ├── features/
-│ │ ├── cart.ts # Cart logic
-│ │ ├── detail.ts # Detail panel logic
-│ │ ├── footer.ts # Footer logic
-│ │ ├── mobileMenu.ts # Mobile menu logic
-│ │ ├── products.ts # Product grid logic
-│ │ ├── search.ts # Search logic
-│ │ ├── toast.ts # Toast logic
-│ │ └── wishlist.ts # Wishlist logic
-│ ├── lib/
-│ │ ├── dragScroll.ts # Mouse drag scroll utility
-│ │ └── modalHistory.ts # History API helper
-│ ├── main.ts # Entry point
-│ ├── style.css # Tailwind + custom CSS
-│ └── types.ts # TypeScript interfaces
-├── .htaccess # Apache config
+│   ├── api/
+│   │   └── products.ts
+│   ├── components/
+│   │   ├── cart.ts
+│   │   ├── detail.ts
+│   │   ├── footer.ts
+│   │   ├── header.ts
+│   │   ├── mobileMenu.ts
+│   │   ├── products.ts
+│   │   ├── search.ts
+│   │   ├── toast.ts
+│   │   └── wishlist.ts
+│   ├── features/
+│   │   ├── cart.ts
+│   │   ├── detail.ts
+│   │   ├── footer.ts
+│   │   ├── mobileMenu.ts
+│   │   ├── products.ts
+│   │   ├── search.ts
+│   │   ├── toast.ts
+│   │   └── wishlist.ts
+│   ├── lib/
+│   │   ├── dragScroll.ts
+│   │   └── modalHistory.ts
+│   ├── main.ts
+│   ├── style.css
+│   └── types.ts
+├── .htaccess
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
 └── vite.config.ts
-
+```
 
 ---
 
