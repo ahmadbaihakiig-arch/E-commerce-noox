@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    html {
+        overscroll-behavior-y: none;
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    body {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-feature-settings: 'cv11', 'ss01';
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+    img,
+    video {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+        outline: 2px solid rgb(167 139 250);
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+     ::selection {
+        background: rgb(167 139 250 / 0.35);
+        color: white;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .safe-top {
+        padding-top: env(safe-area-inset-top);
+    }
+    .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    .text-balance {
+        text-wrap: balance;
+    }
+    .text-pretty {
+        text-wrap: pretty;
+    }
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+    .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, #18181b 25%, #27272a 50%, #18181b 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    animation: reveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.d1 {
+    animation-delay: 0.08s;
+}
+
+.d2 {
+    animation-delay: 0.16s;
+}
+
+.d3 {
+    animation-delay: 0.24s;
+}
+
+.d4 {
+    animation-delay: 0.32s;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.16s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes pulseRing {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.pulse-ring {
+    animation: pulseRing 2.4s infinite;
+}
+
+@keyframes gradShift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.text-grad {
+    background: linear-gradient(120deg, #fb923c 0%, #fb7185 50%, #fbbf24 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradShift 10s ease infinite;
+}
+
+@keyframes scrollHint {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate3d(0, 6px, 0);
+        opacity: 0.3;
+    }
+}
+
+.scroll-hint {
+    animation: scrollHint 2.4s ease-in-out infinite;
+}
+
+.nav-init {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+    border-bottom-color: transparent;
+}
+
+.nav-scrolled {
+    background: rgba(10, 10, 10, 0.94);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+#nav {
+    transition: background-color 0.28s ease, border-color 0.28s ease;
+    backface-visibility: hidden;
+}
+
+#detailBackdrop {
+    transition: opacity 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+#detailBackdrop.open {
+    opacity: 1;
+}
+
+#detailPanel {
+    transform: translate3d(0, 100%, 0);
+    transition: transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+#detailPanel.open {
+    transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 768px) {
+    #detailPanel {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+#cartBackdrop {
+    transition: opacity 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+#cartBackdrop.open {
+    opacity: 1;
+}
+
+#cartPanel {
+    transform: translate3d(0, 100%, 0);
+    transition: transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+#cartPanel.open {
+    transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 768px) {
+    #cartPanel {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+.cart-pulse {
+    animation: cartPulse 400ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes cartPulse {
+    0% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#wishBackdrop {
+    transition: opacity 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+#wishBackdrop.open {
+    opacity: 1;
+}
+
+#wishPanel {
+    transform: translate3d(0, 100%, 0);
+    transition: transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+#wishPanel.open {
+    transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 768px) {
+    #wishPanel {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+#menuBackdrop {
+    transition: opacity 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+#menuBackdrop.open {
+    opacity: 1;
+}
+
+#menuPanel {
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+#menuPanel.open {
+    transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+#searchOverlay {
+  transition: opacity 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+#searchOverlay.open {
+  opacity: 1;
+}
