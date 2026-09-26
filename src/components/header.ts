@@ -68,14 +68,7 @@ export const header = (): string => `
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
       <div class="lg:col-span-7 max-w-3xl">
-        <div class="reveal d1 inline-flex items-center gap-2.5 h-8 pl-2 pr-3.5 rounded-full bg-black/40 border border-white/20 mb-5 lg:mb-7">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-          </span>
-          <span class="text-[11px] lg:text-[12px] font-semibold text-white/90">Summer/Spring collection just dropped</span>
-        </div>
-
+      
         <h1 class="reveal d2 font-display font-bold tracking-tightest text-[clamp(2.25rem,7.5vw,4.75rem)] leading-[1.02]">
           <span class="block">Built to last.</span>
           <span class="block text-grad">Beyond trends.</span>
