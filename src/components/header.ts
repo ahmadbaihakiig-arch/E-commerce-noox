@@ -64,10 +64,10 @@ export const header = (): string => `
     </div>
   </nav>
 
-  <div class="relative z-20 max-w-7xl mx-auto px-4 lg:px-8 pt-28 lg:pt-36 pb-6 lg:pb-8 min-h-[100svh] flex flex-col">
+  <div class="relative z-20 max-w-7xl mx-auto px-4 lg:px-8 pt-20 lg:pt-24 pb-6 lg:pb-8 min-h-[100svh] flex flex-col">
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
-      <div class="lg:col-span-7 max-w-3xl">
+      <div class="lg:col-span-7 max-w-3xl lg:mt-10">
         <h1 class="reveal d2 font-display font-bold tracking-tightest text-[clamp(2.25rem,7.5vw,4.75rem)] leading-[1.02]">
           <span class="block">Built to last.</span>
           <span class="block text-grad">Beyond trends.</span>
